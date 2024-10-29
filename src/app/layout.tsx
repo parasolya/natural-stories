@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/sections/Header";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import localFont from "next/font/local";
+
+const ottoAttackType = localFont({
+   src: "./fonts/OTTOATTACTYPE.ttf",
+  variable: "--font-otto-attack",
+  weight: "400", // Вкажіть відповідну вагу
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const montserrat = Montserrat({
+  weight: ["400", "700"], // Додаємо потрібні варіанти товщини шрифту
+  variable: "--font-montserrat",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -26,9 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >
-        <Header />
+     <body className={`${montserrat.variable} antialiased`}>
+      <Header />
         {children}
       </body>
     </html>

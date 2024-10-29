@@ -14,6 +14,7 @@ const config: Config = {
       md: "768px",
       notLg: { max: "1279.98px" },
       lg: "1280px",
+      xl: "1440px",
     },
     container: {
       center: true,
@@ -22,6 +23,7 @@ const config: Config = {
         xs: "1.25rem",
         md: "2rem",
         lg: "1.5rem",
+        xl: "0",
       },
     },
     extend: {
